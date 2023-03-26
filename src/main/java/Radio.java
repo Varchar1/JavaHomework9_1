@@ -1,6 +1,14 @@
 public class Radio {
-    public int radioNumber;
-    public int volume;
+    private int radioNumber;
+    private int volume;
+
+    public int getRadioNumber() {
+        return radioNumber;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
 
     public void next() {
         if (radioNumber < 9) {
@@ -26,6 +34,16 @@ public class Radio {
             return;
         }
         radioNumber = newRadioNumber;
+    }
+
+    public void setVolume(int newVolume) {
+        if (newVolume < 0) {
+            return;
+        }
+        if (newVolume > 100) {
+            return;
+        }
+        volume = newVolume;
     }
 
     public void increaseVolume() {
