@@ -1,6 +1,15 @@
 public class Radio {
     private int radioNumber;
     private int volume;
+    private int radioAmount = 10;
+
+    public Radio(int size) {
+        radioAmount = size;
+    }
+
+    public Radio() {
+
+    }
 
     public int getRadioNumber() {
         return radioNumber;
@@ -11,7 +20,7 @@ public class Radio {
     }
 
     public void next() {
-        if (radioNumber < 9) {
+        if (radioNumber < radioAmount - 1) {
             radioNumber++;
         } else {
             radioNumber = 0;
@@ -22,7 +31,7 @@ public class Radio {
         if (radioNumber > 0) {
             radioNumber--;
         } else {
-            radioNumber = 9;
+            radioNumber = radioAmount - 1;
         }
     }
 
@@ -30,7 +39,7 @@ public class Radio {
         if (newRadioNumber < 0) {
             return;
         }
-        if (newRadioNumber > 9) {
+        if (newRadioNumber > radioAmount - 1) {
             return;
         }
         radioNumber = newRadioNumber;
